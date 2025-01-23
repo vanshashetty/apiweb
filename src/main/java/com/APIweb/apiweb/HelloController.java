@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper; 
 
 @RestController
-public class BooksController {
+public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello() throws Exception {
