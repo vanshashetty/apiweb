@@ -12,7 +12,11 @@ public class BooksController {
     @GetMapping("/hello")
     public String sayHello() throws Exception {
         String response = new RestTemplate().getForObject("https://openlibrary.org/subjects/science_fiction.json?limit=5", String.class);
-        return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(new ObjectMapper().readTree(response)); // Pretty-print JSON
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(mapper.readTree(response)); // Pretty-print JSON
+    }
+}
+
     }
 }
 
